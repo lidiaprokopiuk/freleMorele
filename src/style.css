@@ -1,0 +1,28 @@
+body {
+    font-family: 'Lato', sans-serif;
+    color: #2c0703;
+}
+.btn {
+    border-radius: 0;
+}
+
+.fs-7 {
+    font-size: 12px;
+}
+
+.text-dark { color: #2c0703!important;}
+.text-light { color: #ebd4cb;}
+.text-pink { color: #b6465f;}
+.text-light-pink {color: #da9f93}
+.text-dark-pink {color: #890620}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+}
+.navbar-brand:hover {
+    color: #b6465f!important;
+}
+
+.item .img-invert:hover .invisible {
+    visibility: visible!important;
+}
