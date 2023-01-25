@@ -7,28 +7,23 @@ const generateShop = () => {
         let { id, name, price, img, imgHover } = x;
         let search = basket.find((x) => x.id === id) || [];
         return `
-        <div class="col-4">
+        <div class="col-sm-10 col-md-6 col-lg-4">
             <div class="item card bg-transparent border-0 mb-4" id='product-'${id}>
                 <div class="position-relative img-invert">
                     <img src=${img} class="img-fluid" alt="">
                     <img src=${imgHover} class="img-fluid invisible position-absolute top-0 start-0" alt="">
                 </div>
-                <div class="card-body text-center">
-                    <h5 class="card-tilte text-uppercase">${name}</h5>                   
-                    
-                    <div class="buttons d-flex justify-content-evenly py-3">
-                        <p class="price">$ ${price}</p>
-                        <div class="d-flex">
-                            <i onclick="decrement(${id})" class="bi bi-dash-lg"></i>
-                            <div id=${id} class="quantity px-3">
-                            ${search.item === undefined ? 0 : search.item}
-                            </div>
-                            <i onclick="increment(${id})" class="bi bi-plus-lg"></i>
+                <div class="card-body bg-white text-center">
+                    <h5 class="card-tilte item-tilte headling mb-2">${name}</h5>
+                    <p class="price">$ ${price}</p>    
+                    <div class="bg-dark text-white py-2 px-4 d-flex justify-content-between mx-auto">
+                        <i onclick="decrement(${id})" class="bi bi-dash-lg"></i>
+                        <div id=${id} class="quantity px-4">
+                            ${search.item === undefined ? "Add to Cart" : search.item}
                         </div>
+                        <i onclick="increment(${id})" class="bi bi-plus-lg"></i>
                     </div>
-                    <button class="btn btn-dark w-50">Add to Cart</button>
-
-                </div>
+                </div>                
             </div>
         </div>`
     }).join(""))
@@ -57,6 +52,7 @@ let decrement = (id) => {
     let search = basket.find((x) => x.id === selectedItem.id);
 
     if(search === undefined) return;
+    // else if(search.item === 0) return;
     else if(search.item === 0) return;
     else {
         search.item -= 1;
@@ -77,3 +73,14 @@ let calculation = () => {
 }
 
 calculation();
+
+
+
+
+{/* <div class="d-flex border px-2 py-1">
+                            <i onclick="decrement(${id})" class="bi bi-dash-lg"></i>
+                            <div id=${id} class="quantity px-4">
+                            ${search.item === undefined ? 0 : search.item}
+                            </div>
+                            <i onclick="increment(${id})" class="bi bi-plus-lg"></i>
+                        </div> */}

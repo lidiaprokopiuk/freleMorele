@@ -1,28 +1,216 @@
+/* global */
 body {
-    font-family: 'Lato', sans-serif;
-    color: #2c0703;
-}
-.btn {
-    border-radius: 0;
+    font-family: 'Lora', serif;
+    font-weight: 300;
+    color: #463f3a;
 }
 
+
+/* buttons */
+.btn {
+    font-weight: 300;
+    border-radius: 0;
+    text-transform: uppercase;
+    transition: 0.3s all ease-in-out;
+    padding: 0.5rem 1.25rem;
+}
+.btn-gray {
+    background-color: #8a817c;
+    color: #f4f3ee;
+    border:1px solid #8a817c;
+}
+.btn-gray:hover {
+    background-color: #e0afa0;
+    color: #f4f3ee;
+    border: 1px solid #e0afa0
+}
+.btn-outline-dark {
+    color: #463f3a;
+    border: 1px solid #463f3a;
+}
+.btn-outline-dark:hover {
+    color: #f4f3ee;
+    background-color: #463f3a;
+    border: 1px solid #463f3a;
+}
+.btn-line { 
+    background-color: #fff;
+}
+.btn-line:before {
+    content:"";
+    height: 1px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    border-bottom: 0.5px solid #463f3a;
+    width: 100%;
+    z-index: -1;
+    transition: 0.5s all ease-in-out;
+}
+.btn-line:hover:before { 
+    width: 0%;
+    left: 50%;
+}
+.btn-light {
+    background-color: #f4f3ee;
+    border: 1px solid #f4f3ee;
+    color: #463f3a;
+}
+.btn-light:hover {
+    background-color: #463f3a;
+    border: 1px solid #463f3a;
+    color: #f4f3ee;
+}
+
+/* square image */
+.square {
+    position: relative;
+}
+.square:after {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+}
+.square-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+
+/* fonts size */
 .fs-7 {
     font-size: 12px;
 }
 
-.text-dark { color: #2c0703!important;}
-.text-light { color: #ebd4cb;}
-.text-pink { color: #b6465f;}
-.text-light-pink {color: #da9f93}
-.text-dark-pink {color: #890620}
+/* fonts color */
 
-.navbar-brand {
-    font-family: 'Playfair Display', serif;
+.text-dark { color: #463f3a!important;}
+.text-light { color: #f4f3ee;}
+
+
+/* headlings */
+
+h1, h2, h3, h4, h5, h6, .btn, .nav-link {
+    font-family: 'Lato', sans-serif;
 }
-.navbar-brand:hover {
-    color: #b6465f!important;
+.headling {
+    text-transform: uppercase;
+    font-weight: 300;
 }
+.section-headling {
+    text-align: center;
+}
+.section-headling:before {
+    content: "/ ";
+}
+
+/* links */
+a {
+    transition: 0.3s all ease-in-out;
+}
+.text-link {
+    color: #463f3a;
+    text-decoration: none;
+}
+.text-link:hover  {
+    color: #8a817c;
+    text-decoration: underline;
+}
+.icon-link {
+    color: #463f3a;
+    text-decoration: none;
+}
+.icon-link:hover {
+    color: #e0afa0;
+}
+
+/* background color */
+
+.bg-light-pink { background-color: rgba(224, 175, 160, 0.15);}
+.bg-light-gray { background-color: rgba(188, 184, 177, 0.15);}
+
+/* form control */
+.form-control {
+    padding: 0.5rem;
+    border-color: #8a817c;
+}
+.form-control:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: #e0afa0;
+}
+
+/* image hover */
 
 .item .img-invert:hover .invisible {
-    visibility: visible!important;
+    opacity: visible!important;
 }
+
+.productItem .invisible {
+    transition: 0.3s all ease-in-out;
+}
+
+.productItem .invisible  {
+    opacity: 0;
+    visibility: visible !important;
+}
+.productItem:hover .invisible  {
+    opacity: 100%
+    /* visibility: visible !important; */
+}
+
+
+/* HEADER */
+
+.navbar-brand:hover,
+.nav-link:hover {
+    color: #e0afa0!important;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+@media (max-width: 991.98px) { 
+    .navbar-nav {
+        position: absolute;
+        background-color: #fff;
+        z-index: 9;
+        left: 0;
+    }
+    .nav-link {
+        font-size: 1.25rem;
+    }
+}
+
+/* MAIN */
+.carousel-img {
+    height: 700px;
+    object-fit: cover;
+}
+
+
+.follow-bg-box {
+    min-height: 50%;
+}
+.item-tilte {
+    min-height: 3rem;
+}
+
+@media (max-width: 1199.98px) { 
+    .carousel-img {
+        height: 550px;
+    }
+ }
+@media (max-width: 767.98px) { 
+    .carousel-img {
+        object-position: 81%;
+    }
+    .carousel-title {
+        width: 100%;
+        height: 100%;
+    }
+ }
